@@ -172,7 +172,7 @@ public class Main implements ActionListener {
         frame.add(panel);
         frame.add(textField);
         frame.setVisible(true);
-
+//
     }
 
     public static void main(String[] args) {
