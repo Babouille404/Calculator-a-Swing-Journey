@@ -18,7 +18,7 @@ public class Main implements ActionListener {
     Font myFont = new Font("Serif", Font.BOLD, 20);
 
     double num1 =0, num2 = 0, result = 0;
-    char operator;
+    String operator;
 
     public Main(){
 
@@ -172,7 +172,7 @@ public class Main implements ActionListener {
         frame.add(panel);
         frame.add(textField);
         frame.setVisible(true);
-//
+
     }
 
     public static void main(String[] args) {
@@ -183,6 +183,92 @@ public class Main implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        //Affichage numberButtons
+        if(e.getSource() == numberButtons[0]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[0].getText())));
+        }
+        else if(e.getSource() == numberButtons[1]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[1].getText())));
+        }
+        else if(e.getSource() == numberButtons[2]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[2].getText())));
+        }
+        else if(e.getSource() == numberButtons[3]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[3].getText())));
+        }
+        else if(e.getSource() == numberButtons[4]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[4].getText())));
+        }
+        else if(e.getSource() == numberButtons[5]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[5].getText())));
+        }
+        else if(e.getSource() == numberButtons[6]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[6].getText())));
+        }
+        else if(e.getSource() == numberButtons[7]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[7].getText())));
+        }
+        else if(e.getSource() == numberButtons[8]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[8].getText())));
+        }
+        else if(e.getSource() == numberButtons[9]) {
+            textField.setText(textField.getText().concat(String.valueOf(numberButtons[9].getText())));
+        }
+
+        if (e.getSource() == decimalButton) {
+            textField.setText(textField.getText().concat(String.valueOf(decimalButton.getText())));
+        }
+        if (e.getSource() == addButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = "+";
+            textField.setText("");
+        }
+        if (e.getSource() == subtractButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = "-";
+            textField.setText("");
+        }
+        if (e.getSource() == equalButton) {
+            num2 = Double.parseDouble(textField.getText());
+
+            switch(operator) {
+                case"+":
+                    result = num1 + num2;
+                    break;
+                case"-":
+                    result = num1 - num2;
+                    break;
+                case"*":
+                    result = num1 * num2;
+                    break;
+                case"/":
+                    result = num1 / num2;
+                    break;
+            }
+            textField.setText(String.valueOf(result));
+            num1 = result;
+        }
+        if (e.getSource() == divideButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = "/";
+            textField.setText("");
+        }
+        if (e.getSource() == multiplyButton) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = "*";
+            textField.setText("");
+        }
+        if (e.getSource() == clearButton) {
+            textField.setText("");
+        }
+        if (e.getSource() == deleteButton) {
+            String string = textField.getText();
+            textField.setText("");
+            for (int i = 0; i < string.length(); i++) {
+                textField.setText(textField.getText()+string.charAt(i));
+            }
+        }
 
     }
 }
